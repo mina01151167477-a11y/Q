@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحدي الهوية الوطنية - دولة قطر</title>
+    <!-- استيراد خط عربي عصري وأنيق يناسب الطالبات -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <!-- مكتبة Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- مكتبة Tone.js للمؤثرات الصوتية التفاعلية -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        qatar: {
+                            maroon: '#9E1B43',
+                            darkMaroon: '#75102F',
+                            lightMaroon: '#FDF2F5',
+                            gold: '#C9A258',
+                            lightGold: '#FAF4E8',
+                            cream: '#FFFFFF',
+                            sand: '#F9F6F0'
+                        }
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                        tajawal: ['Tajawal', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', 'Tajawal', sans-serif;
+            background: radial-gradient(circle at top right, #FFFFFF 0%, #FDFBF7 55%, #F6EFE2 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        /* إلغاء التمرير تمامًا على التابلت واللابتوب (768px فأكبر) وتثبيت الارتفاع على مقاس الشاشة */
+        @media (min-width: 768px) {
+            html, body {
+                height: 100vh;
+                max-height: 100vh;
+                overflow: hidden !important;
+            }
+        }
+
+        /* نقوش هندسية إسلامية/قطرية خفيفة في الخلفية */
+        .qatar-pattern {
+            background-image: radial-gradient(#9E1B43 0.65px, transparent 0.65px), radial-gradient(#C9A258 0.65px, #FFFFFF 0.65px);
+            background-size: 28px 28px;
+            background-position: 0 0, 14px 14px;
+            opacity: 0.045;
+        }
+
+        /* تأثيرات ثلاثية الأبعاد للأزرار والبطاقات بألوان فاتحة مشرقة */
+        .card-3d {
+            background: rgba(255, 255, 255, 0.96);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(201, 162, 88, 0.35);
+            box-shadow: 0 18px 36px -12px rgba(158, 27, 67, 0.09), 0 6px 14px -6px rgba(201, 162, 88, 0.16);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+
+        .btn-qatar {
+            background: linear-gradient(135deg, #A82049 0%, #8A1538 100%);
+            box-shadow: 0 5px 0 #5E0B24, 0 10px 18px rgba(138, 21, 56, 0.22);
+            transition: all 0.15s ease;
+        }
+
+        .btn-qatar:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 0 #5E0B24, 0 14px 22px rgba(138, 21, 56, 0.28);
+            background: linear-gradient(135deg, #B82652 0%, #99183F 100%);
+        }
+
+        /* نقوش هندسية إسلامية/قطرية خفيفة في الخلفية */
+        .qatar-pattern {
+            background-image: radial-gradient(#8A1538 0.75px, transparent 0.75px), radial-gradient(#C5A059 0.75px, #FDFBF7 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+            opacity: 0.06;
+        }
+
+        /* تأثيرات ثلاثية الأبعاد للأزرار والبطاقات */
+        .card-3d {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(12px);
+            border: 2px solid rgba(197, 160, 89, 0.35);
+            box-shadow: 0 20px 40px -15px rgba(138, 21, 56, 0.15), 0 8px 16px -8px rgba(197, 160, 89, 0.2);
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+        }
+
+        .btn-qatar {
+            background: linear-gradient(135deg, #8A1538 0%, #680D28 100%);
+            box-shadow: 0 6px 0 #470619, 0 12px 20px rgba(138, 21, 56, 0.3);
+            transition: all 0.15s ease;
+        }
+
+        .btn-qatar:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #470619, 0 16px 24px rgba(138, 21, 56, 0.35);
+            background: linear-gradient(135deg, #9E1941 0%, #750F2E 100%);
+        }
+
+        .btn-qatar:active:not(:disabled) {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #470619, 0 6px 10px rgba(138, 21, 56, 0.25);
+        }
+
+        .btn-gold {
+            background: linear-gradient(135deg, #D4B06A 0%, #B0893E 100%);
+            box-shadow: 0 6px 0 #7E5E22, 0 12px 20px rgba(197, 160, 89, 0.3);
+            transition: all 0.15s ease;
+        }
+
+        .btn-gold:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #7E5E22, 0 16px 24px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn-gold:active {
+            transform: translateY(4px);
+            box-shadow: 0 2px 0 #7E5E22, 0 6px 10px rgba(197, 160, 89, 0.25);
+        }
+
+        /* أزرار الاختيارات */
+        .option-btn {
+            background: #FFFFFF;
+            border: 2px solid #EFE6D5;
+            box-shadow: 0 3px 0 #E2D4BC;
+            transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: #9E1B43;
+            background-color: #FFFBFD;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 0 #9E1B43;
+        }
+
+        .option-btn:hover:not(:disabled) {
+            border-color: #8A1538;
+            background-color: #FFF9FA;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 0 #8A1538;
+        }
+
+        .option-btn:active:not(:disabled) {
+            transform: translateY(2px);
+            box-shadow: 0 2px 0 #8A1538;
+        }
+
+        .option-correct {
+            background: linear-gradient(135deg, #ECFDF5 0%, #D1FAE5 100%) !important;
+            border-color: #10B981 !important;
+            box-shadow: 0 5px 0 #059669 !important;
+            color: #065F46 !important;
+        }
+
+        .option-wrong {
+            background: linear-gradient(135deg, #FEF2F2 0%, #FEE2E2 100%) !important;
+            border-color: #EF4444 !important;
+            box-shadow: 0 5px 0 #B91C1C !important;
+            color: #991B1B !important;
+            animation: shake 0.45s cubic-bezier(.36,.07,.19,.97) both;
+        }
+
+        /* حركات انسيابية */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-8px) rotate(1deg); }
+        }
+
+        @keyframes waveFlag {
+            0%, 100% { transform: skewY(0deg) scaleX(1); }
+            50% { transform: skewY(-2deg) scaleX(0.98); }
+        }
+
+        @keyframes shake {
+            10%, 90% { transform: translate3d(-2px, 0, 0); }
+            20%, 80% { transform: translate3d(4px, 0, 0); }
+            30%, 50%, 70% { transform: translate3d(-6px, 0, 0); }
+            40%, 60% { transform: translate3d(6px, 0, 0); }
+        }
+
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.9) translateY(15px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+
+        .animate-flag {
+            animation: waveFlag 3s ease-in-out infinite;
+            transform-origin: right center;
+        }
+
+        .animate-pop {
+            animation: popIn 0.45s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+        }
+
+        /* شريط التمرير المخصص للوحة القراءة */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #F5EFE6;
+            border-radius: 10px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #8A1538, #C5A059);
+            border-radius: 10px;
+            border: 2px solid #F5EFE6;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #680D28;
+        }
+
+        /* أيقونة 3D كرتونية بظل ناعم */
+        .icon-3d-badge {
+            background: linear-gradient(145deg, #ffffff, #f3eadc);
+            box-shadow: 5px 5px 12px rgba(138, 21, 56, 0.12), -4px -4px 10px #ffffff, inset 0 0 0 2px rgba(197, 160, 89, 0.3);
+        }
+    </style>
+</head>
+<body class="text-slate-800 relative flex flex-col justify-between md:h-screen md:overflow-hidden">
+
+    <!-- خلفية منقوشة -->
+    <div class="fixed inset-0 qatar-pattern pointer-events-none z-0"></div>
+
+    <!-- شريط علوي أنيق يظهر في جميع المراحل -->
+    <header class="relative z-10 w-full bg-white/95 backdrop-blur-md border-b-2 border-qatar-gold/30 shadow-sm px-4 py-2 md:py-2.5 flex-shrink-0">
+        <div class="max-w-5xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <!-- شعار مصغر وعلم قطر -->
+            <div class="flex items-center gap-3">
+                <!-- رسم علم قطر مصغر ثلاثي الأبعاد -->
+                <div class="w-11 h-8 rounded-lg overflow-hidden shadow-md border border-qatar-gold/40 flex-shrink-0">
+                    <svg viewBox="0 0 120 70" class="w-full h-full">
+                        <rect width="120" height="70" fill="#8A1538"/>
+                        <polygon points="120,0 78,0 88,3.88 78,7.77 88,11.66 78,15.55 88,19.44 78,23.33 88,27.22 78,31.11 88,35 78,38.88 88,42.77 78,46.66 88,50.55 78,54.44 88,58.33 78,62.22 88,66.11 78,70 120,70" fill="#FFFFFF"/>
+                    </svg>
+                </div>
+                <div>
+                    <h1 class="text-base sm:text-lg font-extrabold text-qatar-maroon leading-tight">تحدي الهوية الوطنية</h1>
+                    <p class="text-xs text-slate-500 font-medium hidden sm:block">مادة الدراسات الاجتماعية • درس الأمن الاقتصادي في قطر</p>
+                </div>
+            </div>
+
+            <!-- زر التحكم بالصوت + شارة النقاط -->
+            <div class="flex items-center gap-3">
+                <div id="header-score-badge" class="hidden items-center gap-2 bg-qatar-lightGold border border-qatar-gold px-3.5 py-1.5 rounded-full shadow-inner">
+                    <span class="text-lg">⭐</span>
+                    <span class="text-sm font-bold text-qatar-darkMaroon">النقاط: <span id="header-score-val" class="text-base font-black">0</span> / 100</span>
+                </div>
+
+                <button id="sound-toggle-btn" onclick="toggleSound()" title="تشغيل / كتم الصوت" class="p-2.5 rounded-full bg-qatar-sand hover:bg-qatar-lightGold text-qatar-maroon border border-qatar-gold/40 transition shadow-sm">
+                    <svg id="sound-on-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z"/>
+                    </svg>
+                    <svg id="sound-off-icon" class="w-5 h-5 hidden text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15zM17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- الحاوية الرئيسية للشاشات -->
+    <main class="relative z-10 flex-grow flex items-center justify-center p-3 sm:p-4 md:py-2 md:px-6 md:overflow-hidden">
+        <div class="w-full max-w-5xl md:h-full md:flex md:items-center md:justify-center">
+
+            <!-- ========================================================= -->
+            <!-- أولًا: شاشة البداية (Welcome Screen) -->
+            <!-- ========================================================= -->
+            <section id="screen-welcome" class="card-3d rounded-3xl p-5 sm:p-8 md:p-6 text-center animate-pop relative overflow-hidden w-full max-w-4xl">
+                <!-- زخرفة علوية -->
+                <div class="absolute top-0 left-0 right-0 h-2 bg-gradient-to-l from-qatar-maroon via-qatar-gold to-qatar-maroon"></div>
+
+                <!-- شارة ترحيبية -->
+                <div class="inline-flex items-center gap-2 bg-qatar-lightGold border border-qatar-gold/40 text-qatar-darkMaroon px-4 py-1 rounded-full text-xs sm:text-sm font-bold mb-2 md:mb-2 shadow-sm">
+                    <span>🇶🇦</span>
+                    <span>رحلة تفاعلية في رحاب الوطن</span>
+                </div>
+
+                <!-- العنوان الرئيسي -->
+                <h1 class="text-2xl sm:text-4xl md:text-4xl font-black text-qatar-maroon mb-2 tracking-tight">
+                    تحدي الهوية الوطنية
+                </h1>
+
+                <!-- السؤال المحوري -->
+                <h2 class="text-base sm:text-xl md:text-lg font-bold text-qatar-darkMaroon bg-qatar-lightMaroon inline-block px-4 py-1.5 rounded-2xl mb-2 border border-qatar-maroon/15">
+                    كيف تسهم هويتنا الوطنية في تحقيق الأمن الاجتماعي والاقتصادي؟
+                </h2>
+
+                <!-- العبارة الترحيبية المطلوبة -->
+                <p class="text-sm sm:text-lg md:text-base text-slate-700 font-semibold max-w-2xl mx-auto mb-3 md:mb-3 leading-relaxed">
+                    «رحلتنا اليوم لاكتشاف كيف تحمي هويتنا الوطنية مجتمعنا واقتصادنا»
+                </p>
+
+                <!-- رسم كرتوني ثلاثي الأبعاد أنيق لمعالم دولة قطر وعلمها -->
+                <div class="max-w-lg md:max-w-md mx-auto my-2 p-2.5 rounded-3xl bg-gradient-to-b from-white via-qatar-lightGold/40 to-qatar-sand border-2 border-qatar-gold/30 shadow-inner animate-float">
+                    <svg viewBox="0 0 600 220" class="w-full h-auto max-h-40 md:max-h-36 drop-shadow-sm">
+                        <defs>
+                            <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#FFFFFF"/>
+                                <stop offset="100%" stop-color="#FAF4E8"/>
+                            </linearGradient>
+                            <linearGradient id="maroon3D" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#B0224C"/>
+                                <stop offset="100%" stop-color="#8A1538"/>
+                            </linearGradient>
+                            <linearGradient id="gold3D" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#E6C67E"/>
+                                <stop offset="100%" stop-color="#C5A059"/>
+                            </linearGradient>
+                            <linearGradient id="sandStone" x1="0" y1="0" x2="1" y2="0">
+                                <stop offset="0%" stop-color="#FFFFFF"/>
+                                <stop offset="50%" stop-color="#F5ECE0"/>
+                                <stop offset="100%" stop-color="#E6D7BE"/>
+                            </linearGradient>
+                            <linearGradient id="seaGrad" x1="0" y1="0" x2="0" y2="1">
+                                <stop offset="0%" stop-color="#7DD3FC"/>
+                                <stop offset="100%" stop-color="#38BDF8"/>
+                            </linearGradient>
+                        </defs>
+
+                        <!-- خلفية دائرية ناعمة -->
+                        <rect x="10" y="8" width="580" height="204" rx="24" fill="url(#skyGrad)"/>
+
+                        <!-- شمس ذهبية دافئة -->
+                        <circle cx="110" cy="58" r="28" fill="url(#gold3D)" opacity="0.22"/>
+                        <circle cx="110" cy="58" r="18" fill="url(#gold3D)"/>
+
+                        <!-- سحب كرتونية ناعمة -->
+                        <g fill="#FFFFFF" stroke="#F1E8D8" stroke-width="1">
+                            <rect x="430" y="32" width="75" height="18" rx="9"/>
+                            <circle cx="450" cy="32" r="12"/>
+                            <circle cx="475" cy="29" r="14"/>
+                        </g>
+
+                        <!-- برج الشعلة (Aspire Tower) -->
+                        <g transform="translate(85, 45)">
+                            <path d="M18,138 Q8,75 22,10 L28,10 Q42,75 32,138 Z" fill="url(#sandStone)" stroke="#C5A059" stroke-width="1.5"/>
+                            <ellipse cx="25" cy="32" rx="9" ry="4" fill="#9E1B43"/>
+                            <line x1="25" y1="0" x2="25" y2="12" stroke="#9E1B43" stroke-width="2.5" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- برج الدوحة (Burj Doha) -->
+                        <g transform="translate(150, 38)">
+                            <rect x="5" y="22" width="34" height="123" rx="17" fill="url(#sandStone)" stroke="#C5A059" stroke-width="1.5"/>
+                            <path d="M8,45 L36,65 M36,45 L8,65 M8,75 L36,95 M36,75 L8,95 M8,105 L36,125 M36,105 L8,125" stroke="#C5A059" stroke-width="1.2" opacity="0.6"/>
+                            <line x1="22" y1="4" x2="22" y2="22" stroke="#9E1B43" stroke-width="3" stroke-linecap="round"/>
+                        </g>
+
+                        <!-- متحف الفن الإسلامي -->
+                        <g transform="translate(215, 96)">
+                            <rect x="0" y="52" width="120" height="34" rx="6" fill="url(#sandStone)" stroke="#C5A059" stroke-width="1.5"/>
+                            <rect x="18" y="28" width="84" height="26" rx="5" fill="#FFFFFF" stroke="#C5A059" stroke-width="1.5"/>
+                            <rect x="35" y="9" width="50" height="21" rx="4" fill="url(#sandStone)" stroke="#C5A059" stroke-width="1.5"/>
+                            <path d="M48,30 L48,17 Q60,9 72,17 L72,30 Z" fill="#9E1B43"/>
+                            <rect x="28" y="36" width="10" height="11" rx="2" fill="#9E1B43" opacity="0.8"/>
+                            <rect x="82" y="36" width="10" height="11" rx="2" fill="#9E1B43" opacity="0.8"/>
+                        </g>
+
+                        <!-- علم دولة قطر يرفرف بفخر -->
+                        <g transform="translate(385, 28)">
+                            <rect x="112" y="10" width="6" height="145" rx="3" fill="url(#gold3D)"/>
+                            <circle cx="115" cy="8" r="6" fill="#9E1B43"/>
+                            <g class="animate-flag">
+                                <rect x="10" y="15" width="102" height="60" rx="6" fill="url(#maroon3D)"/>
+                                <polygon points="112,15 76,15 85,21.6 76,28.3 85,35 76,41.6 85,48.3 76,55 85,61.6 76,68.3 85,75 112,75" fill="#FFFFFF"/>
+                            </g>
+                        </g>
+
+                        <!-- مياه الخليج العربي والمركب التقليدي -->
+                        <path d="M10,180 Q150,172 300,180 T590,180 L590,204 Q590,212 580,212 L20,212 Q10,212 10,204 Z" fill="url(#seaGrad)" opacity="0.8"/>
+                        <g transform="translate(335, 155)">
+                            <path d="M5,20 L45,20 L38,29 L12,29 Z" fill="#92400E"/>
+                            <line x1="25" y1="2" x2="25" y2="20" stroke="#92400E" stroke-width="2"/>
+                            <path d="M25,3 Q40,11 25,18 Z" fill="#FFFFFF" stroke="#E5E7EB" stroke-width="1"/>
+                        </g>
+
+                        <!-- كورنيش الدوحة -->
+                        <rect x="10" y="177" width="580" height="6" rx="3" fill="url(#gold3D)"/>
+                    </svg>
+                </div>
+
+                <!-- زر البدء الكبير -->
+                <div class="mt-4 md:mt-3">
+                    <button onclick="goToLearnPhase()" class="btn-qatar text-white text-lg sm:text-xl font-extrabold px-9 py-3.5 rounded-2xl inline-flex items-center gap-3 cursor-pointer">
+                        <span>ابدئي رحلتك التعليمية</span>
+                        <span class="text-2xl">🚀</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ========================================================= -->
+            <!-- ثانيًا: المرحلة الأولى – اقرأِي وتعلّمي (Learn Phase) -->
+            <!-- ========================================================= -->
+            <section id="screen-learn" class="hidden card-3d rounded-3xl p-4 sm:p-6 md:p-5 animate-pop w-full md:max-h-[calc(100vh-92px)] md:flex md:flex-col md:justify-between">
+                <!-- رأس المرحلة التعليمية -->
+                <div class="flex flex-wrap items-center justify-between gap-2 border-b border-qatar-gold/30 pb-2.5 mb-3 flex-shrink-0">
+                    <div class="flex items-center gap-2.5">
+                        <span class="bg-qatar-maroon text-white text-xs sm:text-sm font-bold px-3 py-1 rounded-xl shadow-sm">المرحلة الأولى</span>
+                        <span class="text-qatar-darkMaroon font-extrabold text-base sm:text-lg">اقرأِي وتعلّمي 📖</span>
+                    </div>
+                    <h2 class="text-sm sm:text-lg md:text-base font-black text-qatar-maroon bg-qatar-lightMaroon px-3.5 py-1 rounded-xl border border-qatar-maroon/15">
+                        كيف تسهم الهوية الوطنية في حماية مجتمعنا واقتصادنا؟
+                    </h2>
+                </div>
+
+                <!-- اللوحة التعليمية الكبيرة والمنظمة (بدون سكرول على اللابتوب والتابلت، مع سكرول على الهاتف) -->
+                <div class="bg-qatar-sand/70 border border-qatar-gold/40 rounded-2xl p-3 sm:p-4 md:p-3.5 shadow-inner md:flex-grow md:flex md:flex-col md:justify-between">
+
+                    <!-- حاوية النص: قابلة للتمرير على الهاتف، وشبكة متكاملة بدون تمرير على التابلت واللابتوب -->
+                    <div id="learn-scroll-container" class="max-h-[58vh] md:max-h-none overflow-y-auto md:overflow-visible custom-scrollbar pl-1 md:pl-0 space-y-3 md:space-y-2.5">
+
+                        <!-- المقدمة النصية الكاملة -->
+                        <div class="bg-white border-r-4 border-qatar-maroon px-4 py-2.5 md:py-2 rounded-xl shadow-sm">
+                            <p class="text-sm sm:text-base md:text-[14.5px] font-bold text-slate-800 leading-relaxed md:leading-snug">
+                                «يسهم الاعتزاز بالهوية الوطنية في زيادة قدرة المجتمع على مواجهة التحديات الاجتماعية والاقتصادية، ويساعد على ترسيخ الأمن الاجتماعي والاقتصادي من خلال ستة آثار أساسية:
+                            </p>
+                        </div>
+
+                        <!-- شبكة الفقرات الست: عمود واحد على الهاتف، وعمودان (3×2) على التابلت واللابتوب لإظهار كل المعلومات بدون سكرول -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-2.5">
+
+                            <!-- الفقرة 1 -->
+                            <div class="bg-white hover:bg-qatar-lightGold/40 transition border border-qatar-gold/30 rounded-2xl p-3.5 md:p-2.5 shadow-sm flex items-start gap-3">
+                                <div class="icon-3d-badge w-14 h-14 md:w-11 md:h-11 rounded-xl flex items-center justify-center flex-shrink-0 p-1.5">
+                                    <svg viewBox="0 0 80 80" class="w-full h-full">
+                                        <circle cx="40" cy="40" r="34" fill="#FDF2F4"/>
+                                        <path d="M40 64 C20 50 12 38 12 27 C12 18 19 12 27 12 C33 12 37 15 40 20 C43 15 47 12 53 12 C61 12 68 18 68 27 C68 38 60 50 40 64 Z" fill="#9E1B43"/>
+                                        <path d="M40 64 C52 54 68 38 68 27 C68 18 61 12 53 12 C49 12 45 14 43 17 L48 22 L43 27 L48 32 L43 37 L48 42 L43 47 L46 52 L40 64 Z" fill="#FFFFFF" opacity="0.9"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-base md:text-[14px] font-extrabold text-qatar-maroon mb-0.5 leading-snug">
+                                        1- دعم قيم الولاء والانتماء:
+                                    </h3>
+                                    <p class="text-sm md:text-[13px] text-slate-700 font-medium leading-relaxed md:leading-snug">
+                                        من خلال حب الوطن، والإخلاص له، والمحافظة على ممتلكاته، والمشاركة في تقدمه وازدهاره.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- الفقرة 2 -->
+                            <div class="bg-white hover:bg-qatar-lightGold/40 transition border border-qatar-gold/30 rounded-2xl p-3.5 md:p-2.5 shadow-sm flex items-start gap-3">
+                                <div class="icon-3d-badge w-14 h-14 md:w-11 md:h-11 rounded-xl flex items-center justify-center flex-shrink-0 p-1.5">
+                                    <svg viewBox="0 0 80 80" class="w-full h-full">
+                                        <path d="M40 8 L66 18 V38 C66 55 54 67 40 73 C26 67 14 55 14 38 V18 L40 8 Z" fill="#C9A258"/>
+                                        <path d="M40 13 L61 21 V38 C61 52 51 62 40 67 C29 62 19 52 19 38 V21 L40 13 Z" fill="#9E1B43"/>
+                                        <path d="M31 40 L37 46 L50 32" fill="none" stroke="#FFFFFF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-base md:text-[14px] font-extrabold text-qatar-maroon mb-0.5 leading-snug">
+                                        2- تأهيل المجتمع لمواجهة العادات والقيم الدخيلة:
+                                    </h3>
+                                    <p class="text-sm md:text-[13px] text-slate-700 font-medium leading-relaxed md:leading-snug">
+                                        من خلال التمسك بالقيم الوطنية الأصيلة، والتمييز بين العادات الإيجابية والسلبية.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- الفقرة 3 -->
+                            <div class="bg-white hover:bg-qatar-lightGold/40 transition border border-qatar-gold/30 rounded-2xl p-3.5 md:p-2.5 shadow-sm flex items-start gap-3">
+                                <div class="icon-3d-badge w-14 h-14 md:w-11 md:h-11 rounded-xl flex items-center justify-center flex-shrink-0 p-1.5">
+                                    <svg viewBox="0 0 80 80" class="w-full h-full">
+                                        <circle cx="40" cy="40" r="28" fill="#7DD3FC"/>
+                                        <path d="M26 24 C32 20 42 22 44 28 C46 34 38 38 35 44 C32 50 24 46 22 38 C20 32 22 26 26 24 Z" fill="#34D399"/>
+                                        <path d="M48 34 C54 32 60 38 58 46 C56 54 48 56 44 50 C40 44 44 36 48 34 Z" fill="#34D399"/>
+                                        <ellipse cx="40" cy="40" rx="34" ry="12" fill="none" stroke="#C9A258" stroke-width="3" transform="rotate(-20 40 40)"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-base md:text-[14px] font-extrabold text-qatar-maroon mb-0.5 leading-snug">
+                                        3- تعزيز التفاعل الإيجابي مع الثقافات الأخرى:
+                                    </h3>
+                                    <p class="text-sm md:text-[13px] text-slate-700 font-medium leading-relaxed md:leading-snug">
+                                        من خلال احترام ثقافات الشعوب الأخرى والتعاون معها بإيجابية، مع المحافظة على الهوية الوطنية.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- الفقرة 4 -->
+                            <div class="bg-white hover:bg-qatar-lightGold/40 transition border border-qatar-gold/30 rounded-2xl p-3.5 md:p-2.5 shadow-sm flex items-start gap-3">
+                                <div class="icon-3d-badge w-14 h-14 md:w-11 md:h-11 rounded-xl flex items-center justify-center flex-shrink-0 p-1.5">
+                                    <svg viewBox="0 0 80 80" class="w-full h-full">
+                                        <rect x="16" y="44" width="11" height="22" rx="3" fill="#C9A258"/>
+                                        <rect x="34" y="32" width="11" height="34" rx="3" fill="#9E1B43"/>
+                                        <rect x="52" y="18" width="11" height="48" rx="3" fill="#34D399"/>
+                                        <path d="M18 36 L38 22 L56 12" fill="none" stroke="#F59E0B" stroke-width="3.5" stroke-linecap="round"/>
+                                        <polygon points="58,10 49,10 56,18" fill="#F59E0B"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-base md:text-[14px] font-extrabold text-qatar-maroon mb-0.5 leading-snug">
+                                        4- تنويع الاقتصاد القطري وضمان استقراره واستدامته:
+                                    </h3>
+                                    <p class="text-sm md:text-[13px] text-slate-700 font-medium leading-relaxed md:leading-snug">
+                                        من خلال تنويع مصادر الدخل وعدم الاعتماد على مصدر اقتصادي واحد.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- الفقرة 5 -->
+                            <div class="bg-white hover:bg-qatar-lightGold/40 transition border border-qatar-gold/30 rounded-2xl p-3.5 md:p-2.5 shadow-sm flex items-start gap-3">
+                                <div class="icon-3d-badge w-14 h-14 md:w-11 md:h-11 rounded-xl flex items-center justify-center flex-shrink-0 p-1.5">
+                                    <svg viewBox="0 0 80 80" class="w-full h-full">
+                                        <path d="M40 12 C28 12 20 21 20 32 C20 39 24 44 28 49 L28 55 L52 55 L52 49 C56 44 60 39 60 32 C60 21 52 12 40 12 Z" fill="#FEF08A" stroke="#C9A258" stroke-width="2"/>
+                                        <rect x="31" y="57" width="18" height="5" rx="2" fill="#9E1B43"/>
+                                        <rect x="34" y="64" width="12" height="4" rx="2" fill="#64748B"/>
+                                        <circle cx="40" cy="33" r="4" fill="#9E1B43"/>
+                                        <ellipse cx="40" cy="33" rx="12" ry="5" fill="none" stroke="#9E1B43" stroke-width="1.8" transform="rotate(30 40 33)"/>
+                                        <ellipse cx="40" cy="33" rx="12" ry="5" fill="none" stroke="#9E1B43" stroke-width="1.8" transform="rotate(-30 40 33)"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-base md:text-[14px] font-extrabold text-qatar-maroon mb-0.5 leading-snug">
+                                        5- إيجاد توازن بين الاقتصاد المعتمد على الطاقة والاقتصاد الأكثر اعتمادًا على المعرفة:
+                                    </h3>
+                                    <p class="text-sm md:text-[13px] text-slate-700 font-medium leading-relaxed md:leading-snug">
+                                        من خلال الاهتمام بالتعليم والبحث العلمي والابتكار والتكنولوجيا، إلى جانب الاستفادة من مصادر الطاقة.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- الفقرة 6 -->
+                            <div class="bg-white hover:bg-qatar-lightGold/40 transition border border-qatar-gold/30 rounded-2xl p-3.5 md:p-2.5 shadow-sm flex items-start gap-3">
+                                <div class="icon-3d-badge w-14 h-14 md:w-11 md:h-11 rounded-xl flex items-center justify-center flex-shrink-0 p-1.5">
+                                    <svg viewBox="0 0 80 80" class="w-full h-full">
+                                        <rect x="37" y="16" width="6" height="48" rx="3" fill="#9E1B43"/>
+                                        <rect x="24" y="62" width="32" height="6" rx="3" fill="#C9A258"/>
+                                        <line x1="16" y1="24" x2="64" y2="24" stroke="#C9A258" stroke-width="4" stroke-linecap="round"/>
+                                        <path d="M16 24 L10 42 H22 Z" fill="none" stroke="#9E1B43" stroke-width="1.5"/>
+                                        <path d="M8 42 Q16 50 24 42 Z" fill="#C9A258"/>
+                                        <path d="M64 24 L58 42 H70 Z" fill="none" stroke="#9E1B43" stroke-width="1.5"/>
+                                        <path d="M56 42 Q64 50 72 42 Z" fill="#C9A258"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1">
+                                    <h3 class="text-base md:text-[14px] font-extrabold text-qatar-maroon mb-0.5 leading-snug">
+                                        6- احترام حقوق الإنسان وتفعيل سيادة القانون ومكافحة الفساد:
+                                    </h3>
+                                    <p class="text-sm md:text-[13px] text-slate-700 font-medium leading-relaxed md:leading-snug">
+                                        من خلال تحقيق العدالة والمساواة، واحترام حقوق الأفراد، والالتزام بالقوانين، ومواجهة الفساد».
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- زر الانتقال إلى المسابقة -->
+                <div class="mt-3.5 md:mt-3 text-center flex-shrink-0">
+                    <button onclick="startQuizPhase()" class="btn-qatar text-white text-base sm:text-lg font-extrabold px-8 py-3 rounded-2xl inline-flex items-center gap-2.5 cursor-pointer">
+                        <span>فهمت المعلومات، ابدئي التحدي</span>
+                        <span class="text-xl">✨</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ========================================================= -->
+            <!-- ثالثًا: المرحلة الثانية – المسابقة الإلكترونية (Quiz Phase) -->
+            <!-- ========================================================= -->
+            <section id="screen-quiz" class="hidden card-3d rounded-3xl p-5 sm:p-6 md:p-6 animate-pop w-full max-w-4xl">
+                <!-- شريط التقدم العلوي للسؤال -->
+                <div class="mb-4 md:mb-3.5">
+                    <div class="flex items-center justify-between mb-1.5">
+                        <span id="question-progress-text" class="bg-qatar-maroon text-white text-sm font-extrabold px-4 py-1 rounded-full shadow-sm">
+                            السؤال 1 من 5
+                        </span>
+                        <span id="attempt-indicator" class="text-xs sm:text-sm font-bold text-qatar-darkMaroon bg-qatar-lightGold px-3 py-1 rounded-full border border-qatar-gold/40">
+                            المحاولة الأولى (20 نقطة)
+                        </span>
+                    </div>
+                    <!-- شريط التقدم البصري -->
+                    <div class="w-full h-2.5 bg-qatar-sand rounded-full overflow-hidden border border-qatar-gold/30 p-0.5">
+                        <div id="quiz-progress-bar" class="h-full bg-gradient-to-l from-qatar-maroon to-qatar-gold rounded-full transition-all duration-500" style="width: 20%;"></div>
+                    </div>
+                </div>
+
+                <!-- بطاقة السؤال -->
+                <div class="bg-gradient-to-br from-qatar-lightGold/50 to-white border-2 border-qatar-gold/40 rounded-2xl p-4 sm:p-5 md:p-4 mb-4 md:mb-3.5 shadow-sm relative">
+                    <div class="flex items-center gap-3">
+                        <span class="bg-qatar-gold text-white w-8 h-8 rounded-xl flex items-center justify-center font-black text-base flex-shrink-0 shadow-sm">
+                            ؟
+                        </span>
+                        <h2 id="question-text" class="text-lg sm:text-xl md:text-xl font-extrabold text-qatar-darkMaroon leading-snug">
+                            <!-- نص السؤال يظهر هنا ديناميكيًا -->
+                        </h2>
+                    </div>
+                </div>
+
+                <!-- شبكة الاختيارات الأربعة (2×2 على التابلت واللابتوب لتوفير الارتفاع ومنع التمرير) -->
+                <div id="options-container" class="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-3 mb-4 md:mb-3.5">
+                    <!-- الأزرار الأربعة تُبنى برمجيًا هنا -->
+                </div>
+
+                <!-- صندوق التغذية الراجعة والتفسير -->
+                <div id="feedback-box" class="hidden rounded-2xl p-3.5 sm:p-4 md:p-3 mb-3 border-2 transition-all">
+                    <div class="flex items-start gap-2.5">
+                        <span id="feedback-icon" class="text-xl sm:text-2xl flex-shrink-0"></span>
+                        <div>
+                            <p id="feedback-title" class="text-base sm:text-lg font-extrabold mb-0.5"></p>
+                            <p id="feedback-explanation" class="text-xs sm:text-sm font-medium leading-relaxed hidden"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- زر الانتقال للسؤال التالي -->
+                <div id="next-btn-container" class="hidden text-center pt-1">
+                    <button id="next-question-btn" onclick="nextQuestion()" class="btn-gold text-white text-base sm:text-lg font-extrabold px-9 py-2.5 rounded-2xl inline-flex items-center gap-2 cursor-pointer">
+                        <span id="next-btn-label">السؤال التالي</span>
+                        <span>⬅️</span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ========================================================= -->
+            <!-- رابعًا: شاشة النتيجة النهائية (Result Screen) -->
+            <!-- ========================================================= -->
+            <section id="screen-result" class="hidden card-3d rounded-3xl p-5 sm:p-8 md:p-6 text-center animate-pop relative overflow-hidden w-full max-w-4xl">
+                <!-- شريط زخرفي علوي -->
+                <div class="absolute top-0 left-0 right-0 h-2.5 bg-gradient-to-l from-qatar-maroon via-qatar-gold to-qatar-maroon"></div>
+
+                <!-- رسم احتفالي ثلاثي الأبعاد -->
+                <div class="w-24 h-24 md:w-20 md:h-20 mx-auto mb-3 animate-float">
+                    <svg viewBox="0 0 120 120" class="w-full h-full drop-shadow-md">
+                        <circle cx="60" cy="60" r="54" fill="#FAF4E8" stroke="#C9A258" stroke-width="3"/>
+                        <path d="M38 30 H82 V48 C82 64 72 74 60 76 C48 74 38 64 38 48 V30 Z" fill="url(#gold3D)"/>
+                        <path d="M38 36 H28 C24 36 24 50 32 52 L38 53" fill="none" stroke="#C9A258" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M82 36 H92 C96 36 96 50 88 52 L82 53" fill="none" stroke="#C9A258" stroke-width="4" stroke-linecap="round"/>
+                        <rect x="55" y="75" width="10" height="15" fill="#C9A258"/>
+                        <rect x="42" y="88" width="36" height="8" rx="4" fill="#9E1B43"/>
+                        <polygon points="60,40 63,48 72,48 65,53 67,61 60,56 53,61 55,53 48,48 57,48" fill="#9E1B43"/>
+                    </svg>
+                </div>
+
+                <!-- العنوان الاحتفالي المطلوب -->
+                <h1 class="text-2xl sm:text-3xl md:text-3xl font-black text-qatar-maroon mb-3">
+                    أحسنتِ! انتهى تحدي الهوية الوطنية
+                </h1>
+
+                <!-- العبارة التشجيعية حسب النتيجة -->
+                <div id="encouragement-banner" class="bg-qatar-lightGold border-2 border-qatar-gold rounded-2xl p-3.5 sm:p-4 max-w-2xl mx-auto mb-5 md:mb-4 shadow-sm">
+                    <p id="encouragement-text" class="text-base sm:text-xl font-extrabold text-qatar-darkMaroon">
+                        <!-- النص التشجيعي -->
+                    </p>
+                </div>
+
+                <!-- بطاقات الإحصائيات الثلاث -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 max-w-2xl mx-auto mb-6 md:mb-5">
+                    <!-- مجموع النقاط -->
+                    <div class="bg-white border-2 border-qatar-gold/40 rounded-2xl p-3.5 shadow-sm">
+                        <div class="text-2xl mb-0.5">🏆</div>
+                        <div class="text-xs sm:text-sm font-bold text-slate-500">مجموع النقاط</div>
+                        <div class="text-2xl font-black text-qatar-maroon mt-0.5">
+                            <span id="final-score">0</span> <span class="text-sm font-bold text-slate-400">/ 100</span>
+                        </div>
+                    </div>
+
+                    <!-- الإجابات الصحيحة -->
+                    <div class="bg-emerald-50/80 border-2 border-emerald-200 rounded-2xl p-3.5 shadow-sm">
+                        <div class="text-2xl mb-0.5">✅</div>
+                        <div class="text-xs sm:text-sm font-bold text-emerald-700">الإجابات الصحيحة</div>
+                        <div id="final-correct" class="text-2xl font-black text-emerald-600 mt-0.5">
+                            0
+                        </div>
+                    </div>
+
+                    <!-- الإجابات الخاطئة -->
+                    <div class="bg-rose-50/80 border-2 border-rose-200 rounded-2xl p-3.5 shadow-sm">
+                        <div class="text-2xl mb-0.5">❌</div>
+                        <div class="text-xs sm:text-sm font-bold text-rose-700">الإجابات الخاطئة</div>
+                        <div id="final-wrong" class="text-2xl font-black text-rose-600 mt-0.5">
+                            0
+                        </div>
+                    </div>
+                </div>
+
+                <!-- أزرار إعادة اللعبة والعودة للبداية -->
+                <div class="flex flex-col sm:flex-row items-center justify-center gap-3.5">
+                    <button onclick="restartQuizOnly()" class="btn-qatar w-full sm:w-auto text-white text-base sm:text-lg font-extrabold px-8 py-3 rounded-2xl inline-flex items-center justify-center gap-2 cursor-pointer">
+                        <span>إعادة اللعبة</span>
+                        <span>🔄</span>
+                    </button>
+
+                    <button onclick="returnToHome()" class="btn-gold w-full sm:w-auto text-white text-base sm:text-lg font-extrabold px-8 py-3 rounded-2xl inline-flex items-center justify-center gap-2 cursor-pointer">
+                        <span>العودة للبداية</span>
+                        <span>🏠</span>
+                    </button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- تذييل الصفحة -->
+    <footer class="relative z-10 text-center py-2 px-4 text-xs text-slate-500 font-semibold flex-shrink-0">
+        <span>دولة قطر 🇶🇦 • الهوية الوطنية أساس الأمن الاجتماعي والاقتصادي</span>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- المنطق البرمجي للعبة (JavaScript) -->
+    <!-- ========================================================= -->
+    <script>
+        // ==========================================
+        // 1. بيانات الأسئلة الخمسة المحددة بدقة
+        // ==========================================
+        const quizQuestions = [
+            {
+                question: "أي مما يلي يعبر عن دعم قيم الولاء والانتماء للوطن؟",
+                options: [
+                    { key: "أ", text: "المحافظة على ممتلكات الوطن." },
+                    { key: "ب", text: "إهمال المرافق العامة." },
+                    { key: "ج", text: "مخالفة القوانين." },
+                    { key: "د", text: "عدم المشاركة في تقدم الوطن." }
+                ],
+                correctIndex: 0, // أ
+                explanation: "من خلال حب الوطن، والإخلاص له، والمحافظة على ممتلكاته، والمشاركة في تقدمه وازدهاره."
+            },
+            {
+                question: "كيف يستطيع المجتمع مواجهة العادات والقيم الدخيلة؟",
+                options: [
+                    { key: "أ", text: "تقليد جميع العادات دون تفكير." },
+                    { key: "ب", text: "التمسك بالقيم الوطنية الأصيلة." },
+                    { key: "ج", text: "التخلي عن الهوية الوطنية." },
+                    { key: "د", text: "رفض جميع الثقافات الأخرى." }
+                ],
+                correctIndex: 1, // ب
+                explanation: "يتم ذلك من خلال التمسك بالقيم الوطنية الأصيلة، والتمييز بين العادات الإيجابية والسلبية."
+            },
+            {
+                question: "ما الهدف من تنويع مصادر الدخل في دولة قطر؟",
+                options: [
+                    { key: "أ", text: "زيادة الاعتماد على مصدر واحد." },
+                    { key: "ب", text: "ضمان استقرار الاقتصاد واستدامته." },
+                    { key: "ج", text: "تقليل فرص العمل." },
+                    { key: "د", text: "إضعاف الاقتصاد الوطني." }
+                ],
+                correctIndex: 1, // ب
+                explanation: "تنويع مصادر الدخل وعدم الاعتماد على مصدر اقتصادي واحد يضمن استقرار الاقتصاد القطري واستدامته."
+            },
+            {
+                question: "ما المقصود بالاقتصاد المعتمد على المعرفة؟",
+                options: [
+                    { key: "أ", text: "اقتصاد يعتمد على التعليم والبحث العلمي والابتكار والتكنولوجيا." },
+                    { key: "ب", text: "اقتصاد يعتمد على الزراعة فقط." },
+                    { key: "ج", text: "اقتصاد يعتمد على البترول فقط." },
+                    { key: "د", text: "اقتصاد لا يحتاج إلى التعليم." }
+                ],
+                correctIndex: 0, // أ
+                explanation: "يقوم الاقتصاد المعتمد على المعرفة على الاهتمام بالتعليم والبحث العلمي والابتكار والتكنولوجيا، إلى جانب الاستفادة من مصادر الطاقة."
+            },
+            {
+                question: "أي من الممارسات التالية يسهم في ترسيخ الأمن الاجتماعي؟",
+                options: [
+                    { key: "أ", text: "عدم احترام حقوق الإنسان." },
+                    { key: "ب", text: "انتشار الفساد." },
+                    { key: "ج", text: "احترام حقوق الإنسان وتفعيل سيادة القانون." },
+                    { key: "د", text: "مخالفة القوانين." }
+                ],
+                correctIndex: 2, // ج
+                explanation: "يسهم احترام حقوق الإنسان وتفعيل سيادة القانون ومكافحة الفساد في تحقيق العدالة والمساواة وترسيخ الأمن الاجتماعي."
+            }
+        ];
+
+        // ==========================================
+        // 2. حالة اللعبة (Game State)
+        // ==========================================
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let correctAnswersCount = 0;
+        let wrongAnswersCount = 0;
+        let currentAttempt = 1; // المحاولة الحالية للسؤال (1 أو 2)
+        let questionLocked = false; // لمنع النقر بعد حسم السؤال
+        let soundEnabled = true;
+
+        // ==========================================
+        // 3. نظام المؤثرات الصوتية (Tone.js)
+        // ==========================================
+        function playSound(type) {
+            if (!soundEnabled || typeof Tone === 'undefined') return;
+            try {
+                if (Tone.context.state !== 'running') {
+                    Tone.start();
+                }
+                const synth = new Tone.PolySynth(Tone.Synth).toDestination();
+                synth.volume.value = -8;
+
+                if (type === 'click') {
+                    synth.triggerAttackRelease("C5", "16n");
+                } else if (type === 'correct') {
+                    const now = Tone.now();
+                    synth.triggerAttackRelease("C5", "16n", now);
+                    synth.triggerAttackRelease("E5", "16n", now + 0.1);
+                    synth.triggerAttackRelease("G5", "8n", now + 0.2);
+                } else if (type === 'wrong') {
+                    const now = Tone.now();
+                    synth.triggerAttackRelease("E3", "16n", now);
+                    synth.triggerAttackRelease("C3", "8n", now + 0.12);
+                } else if (type === 'finish') {
+                    const now = Tone.now();
+                    synth.triggerAttackRelease("C5", "16n", now);
+                    synth.triggerAttackRelease("E5", "16n", now + 0.1);
+                    synth.triggerAttackRelease("G5", "16n", now + 0.2);
+                    synth.triggerAttackRelease("C6", "4n", now + 0.3);
+                }
+            } catch (e) {
+                // تجاهل أي قيود صوتية في المتصفح
+            }
+        }
+
+        function toggleSound() {
+            soundEnabled = !soundEnabled;
+            document.getElementById('sound-on-icon').classList.toggle('hidden', !soundEnabled);
+            document.getElementById('sound-off-icon').classList.toggle('hidden', soundEnabled);
+            if (soundEnabled) playSound('click');
+        }
+
+        // ==========================================
+        // 4. التنقل بين الشاشات
+        // ==========================================
+        function showScreen(screenId) {
+            const screens = ['screen-welcome', 'screen-learn', 'screen-quiz', 'screen-result'];
+            screens.forEach(id => {
+                const el = document.getElementById(id);
+                if (id === screenId) {
+                    el.classList.remove('hidden');
+                    // إعادة تشغيل حركة الظهور
+                    el.classList.remove('animate-pop');
+                    void el.offsetWidth;
+                    el.classList.add('animate-pop');
+                } else {
+                    el.classList.add('hidden');
+                }
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // الانتقال من البداية إلى مرحلة القراءة
+        function goToLearnPhase() {
+            playSound('click');
+            document.getElementById('header-score-badge').classList.add('hidden');
+            document.getElementById('header-score-badge').classList.remove('flex');
+            const scrollContainer = document.getElementById('learn-scroll-container');
+            if (scrollContainer) scrollContainer.scrollTop = 0;
+            showScreen('screen-learn');
+        }
+
+        // بدء المسابقة بعد القراءة
+        function startQuizPhase() {
+            playSound('click');
+            resetGameStats();
+            document.getElementById('header-score-badge').classList.remove('hidden');
+            document.getElementById('header-score-badge').classList.add('flex');
+            showScreen('screen-quiz');
+            renderQuestion();
+        }
+
+        // إعادة اللعبة (تبدأ من مرحلة التعلم أو الأسئلة مع تصفير النقاط)
+        function restartQuizOnly() {
+            playSound('click');
+            resetGameStats();
+            document.getElementById('header-score-badge').classList.remove('hidden');
+            document.getElementById('header-score-badge').classList.add('flex');
+            showScreen('screen-quiz');
+            renderQuestion();
+        }
+
+        // العودة لشاشة البداية
+        function returnToHome() {
+            playSound('click');
+            resetGameStats();
+            document.getElementById('header-score-badge').classList.add('hidden');
+            document.getElementById('header-score-badge').classList.remove('flex');
+            showScreen('screen-welcome');
+        }
+
+        function resetGameStats() {
+            currentQuestionIndex = 0;
+            score = 0;
+            correctAnswersCount = 0;
+            wrongAnswersCount = 0;
+            currentAttempt = 1;
+            questionLocked = false;
+            updateScoreUI();
+        }
+
+        function updateScoreUI() {
+            document.getElementById('header-score-val').textContent = score;
+        }
+
+        // ==========================================
+        // 5. منطق عرض الأسئلة والإجابات والمحاولات
+        // ==========================================
+        function renderQuestion() {
+            const qData = quizQuestions[currentQuestionIndex];
+            currentAttempt = 1;
+            questionLocked = false;
+
+            // تحديث مؤشر التقدم
+            const questionNum = currentQuestionIndex + 1;
+            document.getElementById('question-progress-text').textContent = `السؤال ${questionNum} من ${quizQuestions.length}`;
+            document.getElementById('quiz-progress-bar').style.width = `${(questionNum / quizQuestions.length) * 100}%`;
+
+            // تحديث شارة المحاولة
+            const attemptBadge = document.getElementById('attempt-indicator');
+            attemptBadge.textContent = "المحاولة الأولى (20 نقطة)";
+            attemptBadge.className = "text-xs sm:text-sm font-bold text-qatar-darkMaroon bg-qatar-lightGold px-3 py-1 rounded-full border border-qatar-gold/40";
+
+            // عرض نص السؤال
+            document.getElementById('question-text').textContent = qData.question;
+
+            // إخفاء صندوق التغذية الراجعة وزر التالي
+            const feedbackBox = document.getElementById('feedback-box');
+            feedbackBox.classList.add('hidden');
+            document.getElementById('next-btn-container').classList.add('hidden');
+
+            // بناء أزرار الاختيارات الأربعة
+            const optionsContainer = document.getElementById('options-container');
+            optionsContainer.innerHTML = '';
+
+            qData.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.id = `option-btn-${idx}`;
+                btn.type = 'button';
+                btn.className = "option-btn w-full text-right p-3.5 sm:p-4 md:p-3.5 rounded-2xl flex items-center gap-3 cursor-pointer group";
+                btn.onclick = () => handleOptionSelect(idx);
+
+                btn.innerHTML = `
+                    <span class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-qatar-lightGold text-qatar-maroon group-hover:bg-qatar-maroon group-hover:text-white font-black text-base sm:text-lg flex items-center justify-center flex-shrink-0 transition-colors border border-qatar-gold/40">
+                        ${opt.key}
+                    </span>
+                    <span class="text-sm sm:text-lg md:text-base font-bold text-slate-800 flex-1 leading-snug">
+                        ${opt.text}
+                    </span>
+                `;
+                optionsContainer.appendChild(btn);
+            });
+        }
+
+        function handleOptionSelect(selectedIndex) {
+            if (questionLocked) return;
+
+            const qData = quizQuestions[currentQuestionIndex];
+            const selectedBtn = document.getElementById(`option-btn-${selectedIndex}`);
+            const correctBtn = document.getElementById(`option-btn-${qData.correctIndex}`);
+
+            // الحالة الأولى: الإجابة صحيحة
+            if (selectedIndex === qData.correctIndex) {
+                questionLocked = true;
+                playSound('correct');
+
+                selectedBtn.classList.add('option-correct');
+                disableAllOptions();
+
+                // منح 20 نقطة فقط إذا كانت الإجابة صحيحة من المحاولة الأولى
+                if (currentAttempt === 1) {
+                    score += 20;
+                    correctAnswersCount += 1;
+                    updateScoreUI();
+                    showFeedback(
+                        'success',
+                        'أحسنتِ! إجابة صحيحة 🎉 (+20 نقطة)',
+                        qData.explanation
+                    );
+                } else {
+                    // إجابة صحيحة في المحاولة الثانية
+                    correctAnswersCount += 1;
+                    showFeedback(
+                        'success',
+                        'أحسنتِ! إجابة صحيحة 👏',
+                        qData.explanation
+                    );
+                }
+
+                showNextButton();
+                return;
+            }
+
+            // الحالة الثانية: الإجابة خاطئة
+            playSound('wrong');
+            selectedBtn.classList.add('option-wrong');
+            selectedBtn.disabled = true; // تعطيل هذا الخيار الخاطئ حتى لا يُختار مجددًا
+
+            if (currentAttempt === 1) {
+                // المحاولة الأولى خاطئة -> السماح بمحاولة ثانية واحدة
+                currentAttempt = 2;
+
+                const attemptBadge = document.getElementById('attempt-indicator');
+                attemptBadge.textContent = "المحاولة الثانية والأخيرة";
+                attemptBadge.className = "text-xs sm:text-sm font-bold text-amber-800 bg-amber-100 px-3 py-1 rounded-full border border-amber-300";
+
+                showFeedback(
+                    'retry',
+                    'حاولي مرة أخرى، تذكري المعلومات التي قرأتِها في البداية 💡',
+                    null
+                );
+            } else {
+                // المحاولة الثانية خاطئة -> حسم السؤال وإظهار الإجابة الصحيحة والتفسير
+                questionLocked = true;
+                wrongAnswersCount += 1;
+                disableAllOptions();
+
+                // تمييز الإجابة الصحيحة باللون الأخضر
+                correctBtn.classList.add('option-correct');
+
+                showFeedback(
+                    'reveal',
+                    `الإجابة الصحيحة هي: (${qData.options[qData.correctIndex].key}- ${qData.options[qData.correctIndex].text})`,
+                    qData.explanation
+                );
+
+                showNextButton();
+            }
+        }
+
+        function disableAllOptions() {
+            for (let i = 0; i < 4; i++) {
+                const btn = document.getElementById(`option-btn-${i}`);
+                if (btn) btn.disabled = true;
+            }
+        }
+
+        function showFeedback(type, titleText, explanationText) {
+            const box = document.getElementById('feedback-box');
+            const icon = document.getElementById('feedback-icon');
+            const title = document.getElementById('feedback-title');
+            const explanation = document.getElementById('feedback-explanation');
+
+            box.classList.remove('hidden', 'bg-emerald-50', 'border-emerald-400', 'text-emerald-900', 'bg-amber-50', 'border-amber-400', 'text-amber-900', 'bg-rose-50', 'border-rose-400', 'text-rose-900');
+
+            if (type === 'success') {
+                box.classList.add('bg-emerald-50', 'border-emerald-400', 'text-emerald-900');
+                icon.textContent = '🌟';
+            } else if (type === 'retry') {
+                box.classList.add('bg-amber-50', 'border-amber-400', 'text-amber-900');
+                icon.textContent = '🤔';
+            } else if (type === 'reveal') {
+                box.classList.add('bg-rose-50', 'border-rose-400', 'text-rose-900');
+                icon.textContent = '📌';
+            }
+
+            title.textContent = titleText;
+
+            if (explanationText) {
+                explanation.textContent = `التفسير: ${explanationText}`;
+                explanation.classList.remove('hidden');
+            } else {
+                explanation.classList.add('hidden');
+            }
+        }
+
+        function showNextButton() {
+            const container = document.getElementById('next-btn-container');
+            const label = document.getElementById('next-btn-label');
+
+            if (currentQuestionIndex === quizQuestions.length - 1) {
+                label.textContent = "عرض النتيجة النهائية";
+            } else {
+                label.textContent = "السؤال التالي";
+            }
+
+            container.classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            playSound('click');
+            if (currentQuestionIndex < quizQuestions.length - 1) {
+                currentQuestionIndex++;
+                renderQuestion();
+            } else {
+                showFinalResults();
+            }
+        }
+
+        // ==========================================
+        // 6. شاشة النتيجة النهائية
+        // ==========================================
+        function showFinalResults() {
+            playSound('finish');
+            document.getElementById('header-score-badge').classList.add('hidden');
+            document.getElementById('header-score-badge').classList.remove('flex');
+
+            document.getElementById('final-score').textContent = score;
+            document.getElementById('final-correct').textContent = correctAnswersCount;
+            document.getElementById('final-wrong').textContent = wrongAnswersCount;
+
+            // تحديد العبارة التشجيعية حسب النتيجة المطلوبة بدقة
+            let encouragement = "";
+            if (score >= 80) {
+                encouragement = "«ممتازة! أنتِ سفيرة واعية لهويتك الوطنية»";
+            } else if (score >= 60) {
+                encouragement = "«أحسنتِ! لديكِ فهم جيد، واصلي التعلم»";
+            } else if (score >= 40) {
+                encouragement = "«محاولة جيدة! راجعي المعلومات وحاولي مجددًا»";
+            } else {
+                encouragement = "«لا تستسلمي! التعلم رحلة، ويمكنك إعادة التحدي»";
+            }
+
+            document.getElementById('encouragement-text').textContent = encouragement;
+            showScreen('screen-result');
+        }
+    </script>
+</body>
+</html>
